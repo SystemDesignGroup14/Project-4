@@ -25,6 +25,8 @@ class Example extends React.Component {
       name: window.models.exampleModel().name,
       counter: 0,
       inputValue: '',
+      motto:'',
+      tempmotto:'',
       buttonWasClicked: '',
     };
 
@@ -36,6 +38,8 @@ class Example extends React.Component {
     // Note: A commmon idiom in React code is to use JavaScript bind() to
     // smash the method to accomplish this passthrough to the method:
     //      this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChangeForm = this.handleChangeForm.bind(this);
   }
 
   // React components have several "lifecycle functions"
@@ -68,6 +72,18 @@ class Example extends React.Component {
   handleChange(event) {
     this.setState({ inputValue: event.target.value });
   }
+
+  handleChangeForm(event) {
+    this.setState({ tempmotto: event.target.value });
+  }
+  handleSubmit(event) {
+    event.preventDefault();
+    // You can handle the form submission here, e.g., updating the state or sending data somewhere
+    // For now, it just prevents the default form submission action
+    // console.log("button clicked!",event.target.value);
+    this.setState({ motto: this.state.tempmotto });
+  }
+  
 
   // Method called when the button is pushed
   /* eslint-disable-next-line no-unused-vars */
@@ -111,7 +127,7 @@ class Example extends React.Component {
           <hr></hr>
           <form onSubmit={this.handleSubmit} style={{ backgroundColor: 'lightgray', padding: '10px', borderRadius: '5px' }}>
   <label>
-    Change Motto:
+    Update your Motto:
     <input
       type="text"
       placeholder={this.state.motto}
@@ -127,7 +143,7 @@ class Example extends React.Component {
   </label>
   <input
       type="submit"
-      value="Change"
+      value="Change Motto"
       style={{ 
         backgroundColor: 'blue',
         color: 'white',
@@ -309,7 +325,7 @@ class Example extends React.Component {
   {
     this.state.inputValue && (
       <p>This text will appear when this.state.inputValue is truthy.
-        this.state.inputValue === {this.state.inputValue}
+        this.state.inputValue  {this.state.inputValue}
       </p>
     )
   }
@@ -331,7 +347,7 @@ class Example extends React.Component {
             && (
               <p>
                 This text will appear when this.state.inputValue is truthy.
-                this.state.inputValue === {this.state.inputValue}
+                this.state.inputValue {this.state.inputValue}
               </p>
             )
           }
