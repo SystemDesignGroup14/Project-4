@@ -1,21 +1,49 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './States.css';
 
-/**
- * Define States, a React component of Project 4, Problem 2. The model
- * data for this view (the state names) is available at
- * window.models.states.
- */
-class States extends React.Component {
+class States extends Component {
   constructor(props) {
     super(props);
-    console.log('window.models.states', window.models.states);
+    this.state = {
+      searchTerm: '',
+    };
   }
 
+  handleSearchChange = (e) => {
+    this.setState({ searchTerm: e.target.value });
+  };
+
   render() {
+    const { searchTerm } = this.state;
+    const stateNames = models.states(); // Retrieve state names from models.states()
+
+    const filteredStates = stateNames.filter((state) =>
+      state.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     return (
       <div>
-        Replace this with the code for Project 4, Problem 2
+        <h1>States View</h1>
+        <input
+          type="text"
+          placeholder="Enter a substring..."
+          value={searchTerm}
+          onChange={this.handleSearchChange}
+        />
+        {searchTerm && (
+          <div>
+            <p>Filtering by: {searchTerm}</p>
+          </div>
+        )}
+        <ul>
+          {filteredStates.length > 0 ? (
+            filteredStates.map((state) => (
+              <li key={state}>{state}</li>
+            ))
+          ) : (
+            <p>No matching states found.</p>
+          )}
+        </ul>
       </div>
     );
   }
