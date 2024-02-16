@@ -11,6 +11,7 @@ This project is a ReactJS web application that demonstrates various features and
 5. Start the webpack build process and web server by running `npm run build:w` and `node webServer.js` in separate terminal windows.
 6. Open the provided HTML files (`getting-started.html`, `p2.html`, `p4.html`, `p5.html`) in your browser to view the application.
 
+
 #### Problem 1: Understand and Update the Example View
 - Updated the model data for the Example component with my name.
 - Replaced the contents of the motto-update div with JSX statements to display my name and a short motto.
@@ -27,4 +28,10 @@ This project is a ReactJS web application that demonstrates various features and
 - Created a Header component to display a personalized header at the top of each view.
 - Added the header to all ReactJS web apps.
 - Used creativity to design a unique header.
+
+#### Problem 4: Add Dynamic Switching of the Views
+- Created a p4.html and corresponding JSX file (p4.jsx) to include both view components.
+- Implemented the ability to switch between the display of the two components.
+- Modified webpack configuration to build a new bundle (p4.bundle.js).
+
 
