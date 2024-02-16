@@ -1,28 +1,32 @@
-### Project Four README
+# Project Four README
 
-#### Setup
-1. **Repository Creation**: Create a private repository from the Project Four template as per the instructions provided in the general project requirements document.
-2. **Collaborators Addition**: Add collaborators to the repository following the instructions outlined in the general project requirements document. Consider creating a GitHub organization for easier team setup.
-3. **Node.js Installation**: Ensure Node.js and npm package manager are installed on your system by following the installation instructions in the general project requirements document.
-4. **Node Module Installation**: Run `npm install` in your project directory to fetch the required node modules. This command will download approximately 600 node modules, occupying around 100 megabytes of space in the `node_modules` subdirectory.
+## Getting Started
 
-#### Available Commands
-- `npm run build`: Runs Webpack to package all JSX files into a single JavaScript bundle in the `compiled` directory.
-- `npm run build:w`: Similar to `npm run build` but invokes Webpack with `--watch` to monitor changes in React components and regenerate the bundle accordingly. Useful for development.
-- `npm run lint`: Executes ESLint on all JavaScript files in the project to ensure code quality and adherence to standards. Start every JavaScript file with `"use strict";` and resolve any ESLint errors or warnings.
+In this project, we use the model-view-controller (MVC) design pattern. Follow these steps to start working on the project:
 
-#### Running the Web Server
-- Start the Node.js web server with `node webServer.js` from the CLI of your project. It serves files via the HTTP protocol.
-- Access your web app via `http://localhost:3000` in your browser. Verify that the server is running by ensuring that it serves `index.html`.
+1. **Open Example in Browser**: Navigate to the URL [http://localhost:3000/getting-started.html](http://localhost:3000/getting-started.html) to view the example ReactJS application. This page demonstrates ReactJS features and serves as a starting point for your project.
 
-#### Development Environment Configuration
-- Configure your development environment to run Webpack in watch mode (`npm run build:w`) and the Node.js web server (`node webServer.js`).
-- On Unix-like systems (e.g., MacOS), you can run both commands in a single window using `node webServer.js & npm run build:w`.
-- On Windows, start the web server in the background with `start /B node webServer.js` and Webpack in the foreground with `npm run build:w`.
+2. **File System Layout**: Familiarize yourself with the file system layout and module pattern provided in the example. Follow the same organization for your project. Components should be located in the `components` directory, with each component having its own subdirectory containing the JSX file and associated CSS stylesheet.
 
-#### Stopping the Background Web Server
-- Use the command `taskkill /IM node.exe /F` to stop the background web server on Windows.
+3. **Review Files**: Take a closer look at the following files invoked in the `getting-started.html` view:
+   - `getting-started.html`: Provides a `<div>` for ReactJS to render the app into and includes a script tag for the app's JavaScript bundle.
+   - `gettingStarted.jsx`: JSX program that renders the ReactJS component named `Example`.
+   - `components/example/Example.jsx`: ReactJS component named `Example`.
+   - `Example.css`: CSS stylesheet associated with the `Example` component.
 
-#### Additional Information
-- The project includes `index.html`, which contains visual tests for your code.
-- Ensure adherence to all provided guidelines and instructions for successful completion and evaluation of the project.
+4. **Follow Naming Convention**: Use the provided pattern and file naming convention for creating other components in your project. Co-locate each component's JSX file and CSS stylesheet within its own subdirectory under the `components` directory.
+
+5. **Model Data Loading**: Model data is loaded directly into the browser's DOM from the local file system. Access this data under the property name `models` in a ReactJS component, using `window.models`.
+
+## Development Commands
+
+To facilitate development and build processes, the following npm commands are available:
+
+- `npm run build`: Runs Webpack using the configuration file `webpack.config.js` to package all of the project’s JSX files into a single JavaScript bundle in the directory `compiled`.
+- `npm run build:w`: Similar to `npm run build`, but with the addition of the `--watch` flag, which monitors React components and regenerates the bundle if any of them change.
+- `npm run lint`: Runs ESLint on all the project’s JavaScript files to ensure code quality. The code should run ESLint without warnings or errors.
+
+## Running the Web Server
+
+To fetch the web app via HTTP, use the included Node.js web server. Start the server with the following command:
+
