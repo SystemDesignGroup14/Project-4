@@ -30,3 +30,33 @@ To facilitate development and build processes, the following npm commands are av
 
 To fetch the web app via HTTP, use the included Node.js web server. Start the server with the following command:
 
+## Problem 1: Understand and Update the Example View
+
+### Overview
+In this problem, you need to update the Example view to display your name and a short motto. Additionally, you should allow users to update the displayed motto.
+
+### Steps to Complete
+1. **Understand the Example View**: Review the `getting-started.html` view and the `Example` component to understand how the Example view is structured and how data is displayed.
+
+2. **Update Model Data**: Locate the model data for the Example component and replace the placeholder value "Unknown name" with your name.
+
+3. **Update Display Region**: Replace the contents of the `<div>` region with the class `motto-update` in the `Example` component. Display your name and a short motto. Ensure to include styling for this display in `Example.css`.
+
+4. **Allow Motto Update**: Extend the display to allow users to update the displayed motto. Retrieve the default value from the model data.
+
+### Additional Instructions
+- Ensure that your changes are well-documented with comments for clarity.
+- Test your changes thoroughly to verify that the updated Example view functions as expected.
+- Make sure to follow the MVC pattern and maintain the file organization and naming conventions specified in the project requirements.
+
+## Development Commands
+Use the following npm commands for development and building processes:
+
+- `npm run build`: Package all JSX files into a single JavaScript bundle.
+- `npm run build:w`: Run Webpack in watch mode to monitor and regenerate the bundle on changes.
+- `npm run lint`: Run ESLint to ensure code quality and adherence to standards.
+
+## Running the Web Server
+Start the Node.js web server to fetch the web app via HTTP:
+
+
