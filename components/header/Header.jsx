@@ -18,7 +18,7 @@ class Header extends Component {
   }
 
   componentDidMount() {
-    this.interval = setInterval(this.showNextSlide, 1500); // Change slide every 1.5 seconds (1500 milliseconds)
+    this.interval = setInterval(this.showNextSlide, 1500); 
   }
 
   componentWillUnmount() {
@@ -32,10 +32,19 @@ class Header extends Component {
     });
   };
 
-  // eslint-disable-next-line class-methods-use-this
+ 
   handleButtonClick = (url) => {
-    window.open(url, '_blank'); // Open the URL in a new tab/window
+    this.setState({ redirectTo: url });
   };
+  
+  componentDidUpdate(prevProps, prevState) {
+    const { redirectTo } = this.state;
+    if (redirectTo && redirectTo !== prevState.redirectTo) {
+      window.location.href = redirectTo;
+    }
+  }
+  
+  
 
   render() {
     const { currentSlide, images } = this.state;
@@ -54,14 +63,13 @@ class Header extends Component {
 
     return (
       <div className="header" style={slideStyle}>
-        {/* Add your header content here */}
+       
         <h1>SSDI Group 12</h1>
         <div>
-          <button onClick={() => this.handleButtonClick('getting-started.html')}>Getting Started</button>
-          <button onClick={() => this.handleButtonClick('p2.html')}>p2.html</button>
-          <button onClick={() => this.handleButtonClick('p4.html')}>p4.html</button>
-          <button onClick={() => this.handleButtonClick('p5.html')}>p5.html</button>
-          {/* Add more buttons as needed */}
+          <button onClick={() => this.handleButtonClick('/getting-started.html')}>Getting Started</button>
+          <button onClick={() => this.handleButtonClick('/p2.html')}>p2.html</button>
+          <button onClick={() => this.handleButtonClick('/p4.html')}>p4.html</button>
+          <button onClick={() => this.handleButtonClick('/p5.html')}>p5.html</button>
         </div>
       </div>
     );

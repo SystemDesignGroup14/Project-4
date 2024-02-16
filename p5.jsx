@@ -1,36 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Example from './components/example/Example.jsx';
-import States from './components/states/States.jsx';
-import './styles.css'; // Import your CSS file
+import { HashRouter, Route, Switch, Redirect, Link } from 'react-router-dom';
+import Example from './components/example/Example';
+import States from './components/states/States';
+import Header from './components/header/Header';
 
-class P4 extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentView: 'states', // initialization 
-    };
-  }
-
-  toggleView = () => {
-    this.setState(prevState => ({
-      currentView: prevState.currentView === 'example' ? 'states' : 'example',
-    }));
-  };
-
-  render() {
-    return (
-      <div className="container">
-        <button className="toggle-button" onClick={this.toggleView}>
-          Switch to {this.state.currentView === 'example' ? 'States' : 'Example'}
-        </button>
-        <div className="view-container">
-          {this.state.currentView === 'example' ? <Example /> : <States />}
-        </div>
-      </div>
-    );
-  }
+function Navigation() {
+  return (
+    <nav>
+      <Link to="/example">Example</Link> | <Link to="/states">States</Link>
+    </nav>
+  );
 }
 
-// Rendering p4 component
-ReactDOM.render(<P4 />, document.getElementById('reactapp'));
+function RouterComponent() {
+  return (
+    <Switch>
+      <Route path="/states" component={States} />
+      <Route path="/example" component={Example} />
+      <Route exact path="/" render={() => <Redirect to="/example" />} />
+    </Switch>
+  );
+}
+
+function P5() {
+  return (
+    <div>
+    <Header />
+    <HashRouter>
+      <div>
+        <Navigation />
+        <RouterComponent />
+      </div>
+    </HashRouter>
+    </div>
+  );
+}
+
+ReactDOM.render(<P5 />, document.getElementById('reactapp'));

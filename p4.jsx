@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Example from './components/example/Example.jsx';
 import States from './components/states/States.jsx';
 import './styles.css'; // Import your CSS file
+import Header from './components/header/Header.jsx';
 
 class P4 extends React.Component {
   constructor(props) {
@@ -20,7 +21,9 @@ class P4 extends React.Component {
 
   render() {
     return (
+      
       <div className="container">
+      <Header />
         <button className="toggle-button" onClick={this.toggleView}>
           Switch to {this.state.currentView === 'example' ? 'States' : 'Example'}
         </button>
