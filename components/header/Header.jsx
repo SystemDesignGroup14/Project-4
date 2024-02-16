@@ -7,12 +7,12 @@ class Header extends Component {
     this.state = {
       currentSlide: 0,
       images: [
-        './components/header/S11.png',
-        './components/header/S9.png',
-        './components/header/S3.png',
-        './components/header/S4.png',
-        './components/header/S7.png',
-        './components/header/S10.png'
+        './components/header/S10.jpg',
+        './components/header/S5.jpeg',
+        './components/header/S11.jpg',
+        './components/header/S4.jpg',
+        './components/header/niner.jpeg',
+        './components/header/S3.jpg'
       ]
     };
   }
