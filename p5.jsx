@@ -8,28 +8,24 @@ import './styles.css'; // Import your CSS file
 
 ReactDOM.render(<Header />, document.getElementById('reactappHeader'));
 
-class Navigation extends React.Component {
-  render() {
-    return (
-      <nav className="navigation">
-        <Link to="/example" className="nav-link">Example</Link> | <Link to="/states" className="nav-link">States</Link>
-      </nav>
-    );
-  }
+function Navigation() {
+  return (
+    <nav className="navigation">
+      <Link to="/example" className="nav-link">Example</Link> | <Link to="/states" className="nav-link">States</Link>
+    </nav>
+  );
 }
 
-class RouterComponent extends React.Component {
-  render() {
-    return (
-      <div className="router-container">
-        <Switch>
-          <Route path="/states" component={States} />
-          <Route path="/example" component={Example} />
-          <Route exact path="/" render={() => <Redirect to="/example" />} />
-        </Switch>
-      </div>
-    );
-  }
+function RouterComponent() {
+  return (
+    <div className="router-container">
+      <Switch>
+        <Route path="/states" component={States} />
+        <Route path="/example" component={Example} />
+        <Route exact path="/" render={() => <Redirect to="/example" />} />
+      </Switch>
+    </div>
+  );
 }
 
 class P5 extends React.Component {

@@ -25,8 +25,8 @@ class Example extends React.Component {
       name: window.models.exampleModel().name,
       counter: 0,
       inputValue: '',
-      motto:'',
-      tempmotto:'',
+      motto: '',
+      tempmotto: '',
       buttonWasClicked: '',
     };
 
@@ -83,7 +83,7 @@ class Example extends React.Component {
     // console.log("button clicked!",event.target.value);
     this.setState({ motto: this.state.tempmotto });
   }
-  
+
 
   // Method called when the button is pushed
   /* eslint-disable-next-line no-unused-vars */
@@ -121,40 +121,40 @@ class Example extends React.Component {
         <div className="motto-update">
           {/* Your problem #1 motto displaying and updating widget goes here */}
           <p style={{ color: 'blue', fontSize: '16px', fontWeight: 'bold', margin: '10px 0' }}> Name : {this.state.name}</p>
-<p style={{ color: 'green', fontSize: '18px' }}> Motto : {this.state.motto}</p>
+          <p style={{ color: 'green', fontSize: '18px' }}> Motto : {this.state.motto}</p>
 
 
           <hr></hr>
           <form onSubmit={this.handleSubmit} style={{ backgroundColor: 'lightgray', padding: '10px', borderRadius: '5px' }}>
-  <label>
-    Update your Motto:
-    <input
-      type="text"
-      placeholder={this.state.motto}
-      value={this.state.value}
-      onChange={this.handleChangeForm}
-      style={{ 
-        border: '1px solid #ccc', 
-        borderRadius: '3px',
-        padding: '5px',
-        marginRight: '10px' // Adjust the spacing as needed
-      }}
-    />
-  </label>
-  <input
-      type="submit"
-      value="Change Motto"
-      style={{ 
-        backgroundColor: 'blue',
-        color: 'white',
-        padding: '5px 10px',
-        borderRadius: '3px',
-        cursor: 'pointer'
-      }}
-    />
-            </form>
-  
-          </div>
+            <label>
+              Update your Motto:
+              <input
+                type="text"
+                placeholder={this.state.motto}
+                value={this.state.value}
+                onChange={this.handleChangeForm}
+                style={{
+                  border: '1px solid #ccc',
+                  borderRadius: '3px',
+                  padding: '5px',
+                  marginRight: '10px' // Adjust the spacing as needed
+                }}
+              />
+            </label>
+            <input
+              type="submit"
+              value="Change Motto"
+              style={{
+                backgroundColor: 'blue',
+                color: 'white',
+                padding: '5px 10px',
+                borderRadius: '3px',
+                cursor: 'pointer'
+              }}
+            />
+          </form>
+
+        </div>
 
         <p>
           This view is an example of a
@@ -214,7 +214,7 @@ class Example extends React.Component {
         <pre className="example-code">
           <code className="language-jsx">
             {
-`<p>My name is "{this.state.name}".</p>`
+              `<p>My name is "{this.state.name}".</p>`
             }
           </code>
         </pre>
@@ -256,7 +256,7 @@ class Example extends React.Component {
         <pre className="example-code">
           <code className="language-jsx">
             {
-`function outOfBandJSX(option) {
+              `function outOfBandJSX(option) {
   var optionJSX;
   if (option) {
     optionJSX = <div>Option was True</div>;
@@ -281,28 +281,28 @@ class Example extends React.Component {
           </code>
         </pre>
         <p>
-            Calling this function from a template
-            (i.e. <code>{'{this.outOfBandJSX(true)}'}</code>)
-            would be expand to:
+          Calling this function from a template
+          (i.e. <code>{'{this.outOfBandJSX(true)}'}</code>)
+          would be expand to:
         </p>
         <div className="example-output">{this.outOfBandJSX(true)}</div>
         <p>
-            Another way of accomplishing this is embedding the operations inside
-            of curly braces. Although arbitrary JavaScript can appear inside
-            braces, it must return a string or JSX expression to work.
-            JavaScript control flow operations such as if, for, and while do
-            not return values so templates
-            like <code>{'{if (bool) ... else ...}'}</code> do not work.
+          Another way of accomplishing this is embedding the operations inside
+          of curly braces. Although arbitrary JavaScript can appear inside
+          braces, it must return a string or JSX expression to work.
+          JavaScript control flow operations such as if, for, and while do
+          not return values so templates
+          like <code>{'{if (bool) ... else ...}'}</code> do not work.
         </p>
         <p>
-            The following code generates the above output using the
-            JavaScript {'"?:"'} operator and functional-style programming
-            support to always return a value in the template:
+          The following code generates the above output using the
+          JavaScript {'"?:"'} operator and functional-style programming
+          support to always return a value in the template:
         </p>
         <pre className="example-code">
           <code className="language-jsx">
             {
-`<div>
+              `<div>
   option ? <div>Option was True</div> : <div>Option was False</div> }
   <ul>
     {[0,1,2].map((i) =>  <li key={i}>List Item {i}</li>)}
@@ -320,7 +320,7 @@ class Example extends React.Component {
         <pre className="example-code">
           <code className="language-jsx">
             {
-`<div>
+              `<div>
   <p>A paragraph will appear between this paragraph</p>
   {
     this.state.inputValue && (
@@ -363,7 +363,7 @@ class Example extends React.Component {
         <pre className="example-code">
           <code className="language-jsx">
             {
-`<label htmlFor="inId">Input Field: </label>
+              `<label htmlFor="inId">Input Field: </label>
 <input type="text" value={this.state.inputValue} onChange={this.handleChangeBound} />`
             }
           </code>
@@ -384,8 +384,8 @@ class Example extends React.Component {
         </p>
 
         {
-        /* eslint-disable jsx-a11y/label-has-associated-control */
-        /* eslint-disable jsx-a11y/label-has-for */
+          /* eslint-disable jsx-a11y/label-has-associated-control */
+          /* eslint-disable jsx-a11y/label-has-for */
         }
         <div className="example-output">
           <label htmlFor="inId">Input Field:
@@ -408,7 +408,7 @@ class Example extends React.Component {
         <pre className="example-code">
           <code className="language-jsx">
             {
-`<div className="example-output">
+              `<div className="example-output">
   <p>Test button clicks.
     {
       this.state.buttonWasClicked &&
