@@ -34,4 +34,8 @@ This project is a ReactJS web application that demonstrates various features and
 - Implemented the ability to switch between the display of the two components.
 - Modified webpack configuration to build a new bundle (p4.bundle.js).
 
+#### Problem 5: Single Page Applications (SPA)
+- Copied the solution from p4.html into p5.html and p4.jsx into p5.jsx.
+- Implemented view switching using React Router.
+- Styled toolbar-like controls for switching between views.
 
