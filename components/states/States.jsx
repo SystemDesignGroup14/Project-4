@@ -15,11 +15,9 @@ class States extends Component {
 
   render() {
     const { searchTerm } = this.state;
-    const stateNames = models.states(); // Retrieve state names from models.states()
-
+    const stateNames = window.models?.states() || []; // Ensure models is accessed from the global window object
     const filteredStates = stateNames.filter((state) => state.toLowerCase().includes(searchTerm.toLowerCase())
     );
-
     return (
       <div>
         <h1>States View</h1>
@@ -36,9 +34,7 @@ class States extends Component {
         )}
         <ul>
           {filteredStates.length > 0 ? (
-            filteredStates.map((state) => (
-              <li key={state}>{state}</li>
-            ))
+            filteredStates.map((state) => <li key={state}>{state}</li>)
           ) : (
             <p>No matching states found.</p>
           )}
