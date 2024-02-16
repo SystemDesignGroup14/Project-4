@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Example from './components/example/Example.jsx';
 import States from './components/states/States.jsx';
-import './styles.css';
-import Header from './components/header/Header';
+import './styles.css'; // Import your CSS file
 
 class P4 extends React.Component {
   constructor(props) {
@@ -21,17 +20,14 @@ class P4 extends React.Component {
 
   render() {
     return (
-      <>
-        <Header />
-        <div className="container">
-          <button className="toggle-button" onClick={this.toggleView}>
-            Switch to {this.state.currentView === 'example' ? 'States' : 'Example'}
-          </button>
-          <div className="view-container">
-            {this.state.currentView === 'example' ? <Example /> : <States />}
-          </div>
+      <div className="container">
+        <button className="toggle-button" onClick={this.toggleView}>
+          Switch to {this.state.currentView === 'example' ? 'States' : 'Example'}
+        </button>
+        <div className="view-container">
+          {this.state.currentView === 'example' ? <Example /> : <States />}
         </div>
-      </>
+      </div>
     );
   }
 }
