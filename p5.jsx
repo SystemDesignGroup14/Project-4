@@ -7,8 +7,9 @@ import Header from './components/header/Header';
 
 function Navigation() {
   return (
-    <nav>
-      <Link to="/example">Example</Link> | <Link to="/states">States</Link>
+    <nav style={{ backgroundColor: '#333', padding: '10px', color: '#fff' }}>
+      <Link to="/example" style={{ color: '#fff', textDecoration: 'none', marginRight: '10px' }}>Example</Link> | 
+      <Link to="/states" style={{ color: '#fff', textDecoration: 'none' }}>States</Link>
     </nav>
   );
 }
@@ -26,13 +27,13 @@ function RouterComponent() {
 function P5() {
   return (
     <div>
-    <Header />
-    <HashRouter>
-      <div>
-        <Navigation />
-        <RouterComponent />
-      </div>
-    </HashRouter>
+      <Header />
+      <HashRouter>
+        <div>
+          <Navigation />
+          <RouterComponent />
+        </div>
+      </HashRouter>
     </div>
   );
 }
