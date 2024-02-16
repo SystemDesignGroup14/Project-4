@@ -1,44 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter, Route, Switch, Redirect, Link } from 'react-router-dom';
-import Example from './components/example/Example';
-import Header from './components/header/Header';
-import States from './components/states/States';
+import Example from './components/example/Example.jsx';
+import States from './components/states/States.jsx';
 import './styles.css'; // Import your CSS file
 
-ReactDOM.render(<Header />, document.getElementById('reactappHeader'));
+class P4 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentView: 'states', // initialization 
+    };
+  }
 
-function Navigation() {
-  return (
-    <nav className="navigation">
-      <Link to="/example" className="nav-link">Example</Link> | <Link to="/states" className="nav-link">States</Link>
-    </nav>
-  );
-}
+  toggleView = () => {
+    this.setState(prevState => ({
+      currentView: prevState.currentView === 'example' ? 'states' : 'example',
+    }));
+  };
 
-function RouterComponent() {
-  return (
-    <div className="router-container">
-      <Switch>
-        <Route path="/states" component={States} />
-        <Route path="/example" component={Example} />
-        <Route exact path="/" render={() => <Redirect to="/example" />} />
-      </Switch>
-    </div>
-  );
-}
-
-class P5 extends React.Component {
   render() {
     return (
-      <HashRouter>
-        <div className="app-container">
-          <Navigation />
-          <RouterComponent />
+      <div className="container">
+        <button className="toggle-button" onClick={this.toggleView}>
+          Switch to {this.state.currentView === 'example' ? 'States' : 'Example'}
+        </button>
+        <div className="view-container">
+          {this.state.currentView === 'example' ? <Example /> : <States />}
         </div>
-      </HashRouter>
+      </div>
     );
   }
 }
 
-ReactDOM.render(<P5 />, document.getElementById('reactapp'));
+// Rendering p4 component
+ReactDOM.render(<P4 />, document.getElementById('reactapp'));
