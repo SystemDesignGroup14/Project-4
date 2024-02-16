@@ -17,8 +17,7 @@ class States extends Component {
     const { searchTerm } = this.state;
     const stateNames = models.states(); // Retrieve state names from models.states()
 
-    const filteredStates = stateNames.filter((state) =>
-      state.toLowerCase().includes(searchTerm.toLowerCase())
+    const filteredStates = stateNames.filter((state) => state.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     return (
