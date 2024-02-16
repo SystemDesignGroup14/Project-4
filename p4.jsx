@@ -21,15 +21,17 @@ class P4 extends React.Component {
 
   render() {
     return (
-      
-      <div className="container">
+      <div>
       <Header />
+      <div className="container">
+      
         <button className="toggle-button" onClick={this.toggleView}>
           Switch to {this.state.currentView === 'example' ? 'States' : 'Example'}
         </button>
         <div className="view-container">
           {this.state.currentView === 'example' ? <Example /> : <States />}
         </div>
+      </div>
       </div>
     );
   }
