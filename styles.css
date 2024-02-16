@@ -1,0 +1,59 @@
+/* styles.css */
+
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.navigation {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.router-container {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+
+
+/* p4.jsx
+
+/* styles.css */
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.toggle-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.view-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}

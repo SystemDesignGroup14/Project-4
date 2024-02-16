@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import { HashRouter, Route, Switch, Redirect, Link } from 'react-router-dom';
 import Example from './components/example/Example';
 import States from './components/states/States';
-
+import './styles.css'; // Import your CSS file
 
 class Navigation extends React.Component {
   render() {
     return (
-      <nav>
-        <Link to="/example">Example</Link> | <Link to="/states">States</Link>
+      <nav className="navigation">
+        <Link to="/example" className="nav-link">Example</Link> | <Link to="/states" className="nav-link">States</Link>
       </nav>
     );
   }
@@ -18,11 +18,13 @@ class Navigation extends React.Component {
 class RouterComponent extends React.Component {
   render() {
     return (
-      <Switch>
-        <Route path="/states" component={States} />
-        <Route path="/example" component={Example} />
-        <Route exact path="/" render={() => <Redirect to="/example" />} />
-      </Switch>
+      <div className="router-container">
+        <Switch>
+          <Route path="/states" component={States} />
+          <Route path="/example" component={Example} />
+          <Route exact path="/" render={() => <Redirect to="/example" />} />
+        </Switch>
+      </div>
     );
   }
 }
@@ -31,7 +33,7 @@ class P5 extends React.Component {
   render() {
     return (
       <HashRouter>
-        <div>
+        <div className="app-container">
           <Navigation />
           <RouterComponent />
         </div>
