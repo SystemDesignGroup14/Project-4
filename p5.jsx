@@ -2,8 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter, Route, Switch, Redirect, Link } from 'react-router-dom';
 import Example from './components/example/Example';
+import Header from './components/header/Header';
 import States from './components/states/States';
 import './styles.css'; // Import your CSS file
+
+ReactDOM.render(<Header />, document.getElementById('reactappHeader'));
 
 class Navigation extends React.Component {
   render() {
